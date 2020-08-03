@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.eu.demo.dao.StudentMapper">
+    <select id="getStudents" resultType="com.eu.demo.pojo.Student">
+        select *from student
+    </select>
+
+    <delete id="deleteStudentById">
+        delete from student where id=#{id}
+    </delete>
+
+    <update id="updateStudent">
+        update student
+        set name=#{name},
+            gender=#{gender},
+            age=#{age}
+        where id=#{id};
+    </update>
+
+    <select id="getStudentsById" resultType="com.eu.demo.pojo.Student">
+        select *from student where id=#{id}
+    </select>
+</mapper>
